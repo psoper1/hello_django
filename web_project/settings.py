@@ -57,6 +57,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
+    'http://localhost:8000',
+    'https://static.wikia.nocookie.net',
 ]
 
 ROOT_URLCONF = 'web_project.urls'
