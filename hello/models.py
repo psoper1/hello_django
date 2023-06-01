@@ -4,7 +4,7 @@ from django.db import models
 
 class champ(models.Model):
     name = models.CharField(max_length=100)
-    age = models.IntegerField(null=True)
+    # age = models.IntegerField(null=True)
     image = models.CharField(max_length=2000, null=True)
 
     def __str__(self):
