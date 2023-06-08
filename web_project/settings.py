@@ -98,7 +98,7 @@ DATABASES = {
 }
     
 RIOT_API_KEY = os.getenv('RIOT_API_KEY', '')
-print(RIOT_API_KEY)
+# print(RIOT_API_KEY)
 
 
 # Password validation
