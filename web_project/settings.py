@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -96,8 +97,15 @@ DATABASES = {
         'PORT': '5432',
     },
 }
+
+def get_env_variable(var_name):
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        error_msg = f"The {var_name} environment variable is not set."
+        raise ImproperlyConfigured(error_msg)
     
-RIOT_API_KEY = os.getenv('RIOT_API_KEY', '')
+RIOT_API_KEY = get_env_variable('RIOT_API_KEY')
 # print(RIOT_API_KEY)
 
 

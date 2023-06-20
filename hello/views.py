@@ -8,8 +8,6 @@ from django.http import JsonResponse
 from django.core.cache import cache
 from django.views.decorators.cache import cache_page
 
-require('dotenv').config();
-
 def home(request):
     return HttpResponse("Hello, Django!")
 
