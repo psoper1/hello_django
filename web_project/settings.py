@@ -105,8 +105,8 @@ def get_env_variable(var_name):
         error_msg = f"The {var_name} environment variable is not set."
         raise ImproperlyConfigured(error_msg)
     
-RIOT_API_KEY = get_env_variable('RIOT_API_KEY')
-# print(RIOT_API_KEY)
+RIOT_API_KEY = os.environ.get('RIOT_API_KEY')
+print(RIOT_API_KEY)
 
 
 # Password validation
